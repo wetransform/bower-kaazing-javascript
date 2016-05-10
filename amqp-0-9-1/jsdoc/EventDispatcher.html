@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Charset</title>
+    <title>JSDoc: Class: EventDispatcher</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Class: Charset</h1>
+    <h1 class="page-title">Class: EventDispatcher</h1>
     
     
 
@@ -27,10 +27,10 @@
     
 <header>
     <h2>
-    Charset
+    EventDispatcher
     </h2>
     
-        <div class="class-description">Charset provides character set encoding and decoding for JavaScript.</div>
+        <div class="class-description">EventDispatcher implements the observer pattern.</div>
     
 </header>  
 
@@ -41,7 +41,7 @@
     
         
 <dt>
-    <h4 class="name" id="Charset"><span class="type-signature"></span>new Charset<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="EventDispatcher"><span class="type-signature"></span>new EventDispatcher<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -49,7 +49,7 @@
     
     
     <div class="description">
-        Charset is an abstract super class for all character set encoders and decoders.
+        Base class for classes that dispatch event.
     </div>
     
 
@@ -82,7 +82,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2196">line 2196</a>
+        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2781">line 2781</a>
     </li></ul></dd>
     
     
@@ -120,74 +120,6 @@
     
     
     
-    
-        <h3 class="subsection-title">Members</h3>
-        
-        <dl>
-            
-<dt>
-    <h4 class="name" id="UTF8"><span class="type-signature">&lt;static> </span>UTF8<span class="type-signature"> :<a href="Charset.html">Charset</a></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        The UTF8 character set encoder and decoder.
-    </div>
-    
-    
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="Charset.html">Charset</a></span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2231">line 2231</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-</dd>
-
-        </dl>
     
     
     
@@ -196,7 +128,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="decode"><span class="type-signature"></span>decode<span class="signature">(buf)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="addEventListener"><span class="type-signature"></span>addEventListener<span class="signature">(type, listener)</span><span class="type-signature"> &rarr; {void}</span></h4>
     
     
 </dt>
@@ -204,8 +136,7 @@
     
     
     <div class="description">
-        Decodes a ByteBuffer into a String.  Bytes for partial characters remain 
-in the ByteBuffer after decode has completed.
+        Adds an event listener for the specified type.
     </div>
     
 
@@ -239,13 +170,13 @@ in the ByteBuffer after decode has completed.
 	
         <tr>
             
-                <td class="name"><code>buf</code></td>
+                <td class="name"><code>type</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type"><a href="ByteBuffer.html">ByteBuffer</a></span>
+<span class="param-type">String</span>
 
 
             
@@ -255,7 +186,32 @@ in the ByteBuffer after decode has completed.
             
             
             
-            <td class="description last">the ByteBuffer to decode</td>
+            <td class="description last">the event type
+<p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>listener</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the listener
+<p></td>
         </tr>
 	
 	
@@ -286,7 +242,7 @@ in the ByteBuffer after decode has completed.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2203">line 2203</a>
+        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2792">line 2792</a>
     </li></ul></dd>
     
     
@@ -310,10 +266,6 @@ in the ByteBuffer after decode has completed.
     <h5>Returns:</h5>
     
             
-<div class="param-desc">
-    the decoded String
-</div>
-
 
 
 <dl>
@@ -322,7 +274,7 @@ in the ByteBuffer after decode has completed.
 	</dt>
 	<dd>
 		
-<span class="param-type">String</span>
+<span class="param-type">void</span>
 
 
 	</dd>
@@ -336,7 +288,7 @@ in the ByteBuffer after decode has completed.
         
             
 <dt>
-    <h4 class="name" id="encode"><span class="type-signature"></span>encode<span class="signature">(text, buf)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="dispatchEvent"><span class="type-signature"></span>dispatchEvent<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
     
     
 </dt>
@@ -344,7 +296,94 @@ in the ByteBuffer after decode has completed.
     
     
     <div class="description">
-        Encodes a String into a ByteBuffer.
+        Dispatches an event.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2860">line 2860</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">void</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="hasEventListener"><span class="type-signature"></span>hasEventListener<span class="signature">(type)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Returns true if the event type has at least one listener associated with it.
     </div>
     
 
@@ -378,7 +417,7 @@ in the ByteBuffer after decode has completed.
 	
         <tr>
             
-                <td class="name"><code>text</code></td>
+                <td class="name"><code>type</code></td>
             
             
             <td class="type">
@@ -394,30 +433,7 @@ in the ByteBuffer after decode has completed.
             
             
             
-            <td class="description last">the String to encode</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>buf</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ByteBuffer.html">ByteBuffer</a></span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">the target ByteBuffer</td>
+            <td class="description last">the event type</td>
         </tr>
 	
 	
@@ -448,7 +464,167 @@ in the ByteBuffer after decode has completed.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2217">line 2217</a>
+        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2843">line 2843</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="removeEventListener"><span class="type-signature"></span>removeEventListener<span class="signature">(type, listener)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Removes the specified event listener.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the event type
+<p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>listener</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the listener
+<p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Amqp-0-9-1-debug.js.html">Amqp-0-9-1-debug.js</a>, <a href="Amqp-0-9-1-debug.js.html#line2815">line 2815</a>
     </li></ul></dd>
     
     
